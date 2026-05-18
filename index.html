@@ -179,11 +179,13 @@
             margin-bottom: 25px;
         }
 
+        /* All project titles are now stylized using your secondary cosmic cyan */
         .project-title {
             font-weight: bold;
-            color: #ffffff;
-            font-size: 1.2rem;
+            color: var(--secondary); 
+            font-size: 1.22rem;
             margin-bottom: 5px;
+            letter-spacing: 0.3px;
         }
 
         .project-meta {
@@ -261,7 +263,7 @@
             <li class="dropdown">
                 <a href="#research" class="dropbtn">Research Interests ▾</a>
                 <div class="dropdown-content">
-                    <a href="eftoflss.html">Project: EFTofLSS Breakdown</a>
+                    <a href="eftoflss.html">Predicting EFTofLSS Counter-terms from Halo Properties</a>
                 </div>
             </li>
             <li><a href="#achievements">Achievements</a></li>
@@ -299,7 +301,7 @@
             
             <div class="project">
                 <div class="project-title">
-                    <a href="eftoflss.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed var(--secondary); transition: color 0.2s;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='#ffffff'">
+                    <a href="eftoflss.html" style="color: inherit; text-decoration: none; transition: text-decoration 0.2s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
                         Predicting EFTofLSS Counter-terms from Halo Properties ↗
                     </a>
                 </div>
