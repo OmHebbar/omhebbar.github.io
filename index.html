@@ -67,27 +67,34 @@
             color: var(--text-muted);
         }
 
+        /* NEW HIGH-CONTRAST NAVIGATION BAR BAR */
         nav {
             background-color: var(--nav-bg);
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 2px solid #1e293b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav a {
             display: inline-block;
-            color: #94a3b8;
-            padding: 15px 20px;
+            color: #ffffff; /* Brightened base text color to maximum contrast white */
+            padding: 15px 25px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.2s ease;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
         }
 
+        /* Vibrant active state hover effect */
         nav a:hover {
             color: #ffffff;
-            background-color: var(--card-bg);
+            background-color: #1e293b;
+            text-shadow: 0 0 8px var(--secondary); /* High-visibility cyan text glow */
+            box-shadow: inset 0 -3px 0 var(--secondary); /* Solid cyan indicator bar at bottom */
         }
 
         .container {
@@ -250,25 +257,24 @@
                 <p>Investigated the impact of baryonic feedback on large-scale matter distribution by comparing theoretical models with cosmological simulations. We utilised the Spherical Collapse model to characterize dark matter PDFs under non-linear gravitational evolution. The aim was to find quantities related to the matter distribution PDFs that remain conserved through gravitational evolution, providing a technique to decouple baryonic signatures from gravitational dynamics.</p>
             </div>
         </section>
-<section id="achievements">
+
+        <section id="achievements">
             <h2>Achievements & Skills</h2>
             <h3>Key Recognitions</h3>
             
-            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
-                <div style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px;">
-                    <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">CSIR NET Junior Research Fellowship (JRF) 2026</strong>
-                    <span style="color: #e2e8f0;">Secured All India Rank 66 in Physical Sciences.</span>
-                </div>
-                
-                <div style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px;">
-                    <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">National Topper 2023</strong>
-                    <span style="color: #e2e8f0;">National Graduate Physics Examination (NGPE) organized by IAPT.</span>
-                </div>
-                
-                <div style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px;">
-                    <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">KVPY Scholar 2021</strong>
-                    <span style="color: #e2e8f0;">Awarded by the Department of Science and Technology, Govt. of India.</span>
-                </div>
+            <div class="achievement-card" style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px; margin-bottom: 15px;">
+                <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">CSIR NET Junior Research Fellowship (JRF) 2026</strong>
+                <span style="color: #e2e8f0;">Secured All India Rank 66 in Physical Sciences.</span>
+            </div>
+            
+            <div class="achievement-card" style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px; margin-bottom: 15px;">
+                <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">National Topper 2023</strong>
+                <span style="color: #e2e8f0;">National Graduate Physics Examination (NGPE) organized by IAPT.</span>
+            </div>
+            
+            <div class="achievement-card" style="background: #111827; padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px; margin-bottom: 15px;">
+                <strong style="color: var(--secondary); display: block; font-size: 1.1rem; margin-bottom: 4px;">KVPY Scholar 2021</strong>
+                <span style="color: #e2e8f0;">Awarded by the Department of Science and Technology, Govt. of India.</span>
             </div>
 
             <h3>Technical Skills</h3>
