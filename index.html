@@ -6,13 +6,13 @@
     <title>Om Kishor Hebbar | Academic Portfolio</title>
     <style>
         :root {
-            --primary: #0f172a; /* Slate Blackboard Header */
-            --secondary: #f59e0b; /* Amber/Gold Accent */
-            --text: #f1f5f9; /* Near-White Body Text */
-            --text-muted: #94a3b8; /* Soft Gray for Secondary Details */
-            --bg: #1e293b; /* Deep Space/Slate Background */
-            --card-bg: #334155; /* Lighter Slate for Structural Cards */
-            --nav-bg: #0f172a;
+            --primary: #0b132b; /* Deep Space Navy Header */
+            --secondary: #00b4d8; /* Cosmic Cyan/Nebula Accent */
+            --text: #e2e8f0; /* Crisp Off-White Text */
+            --text-muted: #94a3b8; /* Muted Star-Gray for Details */
+            --bg: #111827; /* Midnight Void Background */
+            --card-bg: #1f2937; /* Galactic Gray for Cards */
+            --nav-bg: #0b132b;
         }
 
         body {
@@ -40,14 +40,14 @@
             gap: 40px;
         }
 
-        /* Profile picture styling with gold border accent */
+        /* Profile picture styling with cosmic cyan border */
         .profile-pic {
             width: 180px;
             height: 180px;
             border-radius: 8px;
             border: 3px solid var(--secondary);
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.2);
         }
 
         .header-text {
@@ -58,6 +58,7 @@
             margin: 0;
             font-size: 2.7rem;
             color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         header p {
@@ -72,12 +73,12 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #475569;
+            border-bottom: 1px solid #1e293b;
         }
 
         nav a {
             display: inline-block;
-            color: #cbd5e1;
+            color: #94a3b8;
             padding: 15px 20px;
             text-decoration: none;
             font-weight: bold;
@@ -100,13 +101,14 @@
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             scroll-margin-top: 60px;
+            border: 1px solid #374151;
         }
 
         h2 {
             color: var(--secondary);
-            border-bottom: 2px solid #475569;
+            border-bottom: 2px solid #374151;
             padding-bottom: 8px;
             margin-top: 0;
         }
@@ -134,9 +136,9 @@
             margin-bottom: 10px;
         }
 
-        /* Dark Mode High Contrast Badges */
+        /* High contrast cosmic badges */
         .badge {
-            background: #1e293b;
+            background: #111827;
             color: var(--secondary);
             border: 1px solid var(--secondary);
             padding: 4px 10px;
@@ -144,7 +146,7 @@
             font-size: 0.85rem;
             display: inline-block;
             margin: 4px;
-            font-family: 'Courier New', Courier, monospace; /* Monospace vibe for skills */
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .contact-info a {
@@ -171,7 +173,6 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive configuration for mobile viewports */
         @media (max-width: 600px) {
             .header-container {
                 flex-direction: column;
