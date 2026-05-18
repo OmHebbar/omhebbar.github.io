@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EFTofLSS Project | Om Kishor Hebbar</title>
     
-    <!-- MathJax Configuration -->
     <script>
         window.MathJax = {
             tex: {
@@ -20,7 +19,6 @@
         };
     </script>
 
-    <!-- Correct MathJax Loader -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <style>
@@ -188,13 +186,23 @@
 
 <div class="container">
 
-<section>
-<h2>Project Overview & Motivation</h2>
+    <section id="overview">
+        <h2>Project Overview & Motivation</h2>
+        <p>
+            The Effective Field Theory (EFT) approach for studying LSS has been successful in modeling the large-scale universe as an effective fluid while including the effects from non-linear scales. It has been proposed to formulate a well-defined and controlled alternative to conventional cosmological perturbation theory.
+        </p>
+        <p>
+            The EFT of LSS approach begins by coarse-graining the standard cosmological fluid equations, which introduces an effective stress tensor sourced by short-scale dynamics. The back-reaction on the long-wavelength fields due to non-linear motions is precisely what generates the effective stress tensor.
+        </p>
+        <p>
+            This effective stress tensor can be written both as an expansion in terms of long-wavelength fields, as well as in terms of short-wavelength fields. Terms in the long-wavelength expansion are written purely based on the symmetries of the theory, with undetermined coefficients known as the counter-terms. In general, these counter-terms are measured through cosmological N-body simulations.
+        </p>
+        <p>
+            When taking expectation values over these short-wavelength modes in the presence of long-wavelength perturbations, the symmetries of the system constrain the corresponding long-wavelength expansion. The effective stress tensor takes the form of an imperfect fluid:
+        </p>
 
-<p>The Effective Field Theory (EFT) approach for studying LSS models the large-scale universe as an effective fluid including non-linear effects.</p>
-
-<div class="equation-wrapper">
-<div class="math-box">
+        <div class="equation-wrapper">
+            <div class="math-box">
 $$
 \begin{aligned}
 \left\langle [\tau^{ij}]_{\Lambda} \right\rangle_{\delta_l}
@@ -208,31 +216,59 @@ c_s^2 \delta_l \delta^{ij}
 - \frac{2}{3} \delta^{ij} \partial_k v_l^k
 \right)
 \Bigg]
-+ \Delta \tau^{ij}
++ \Delta \tau^{ij} + \dots
 \end{aligned}
 $$
-</div>
-</div>
+            </div>
+        </div>
 
-</section>
+        <p>
+            Here, $p_b$ represents background pressure, $c_s^2$ denotes the speed of sound of the fluctuations, while $c_{bv}$ and $c_{sv}$ correspond to the bulk and shear viscosity parameters respectively. 
+        </p>
+        <p>
+            The goal of this research project is to map out the explicit physical origins of these counter-terms. Instead of treating counter-terms purely as nuisance parameters to be fitted to observational data, we look directly inside large-scale N-body simulations to calculate them deterministically from the aggregate properties of individual dark matter halos.
+        </p>
+    </section>
 
-<section>
-<h2>Methodology</h2>
-
-<div class="equation-wrapper">
-<div class="math-box">
+    <section id="methodology">
+        <h2>Methodology & Theoretical Framework</h2>
+        <p>
+            To trace the precise footprint of short-scale contributions, we decouple the kinematics inside our GADGET-4 simulation setups. The short-wavelength component of the effective stress tensor is quantified directly using localized sub-resolution properties:
+        </p>
+        
+        <div class="equation-wrapper">
+            <div class="math-box">
 $$
 \tau_{ij} = \rho_m v_i^s v_j^s + \frac{2 \partial_i\phi^s \partial_j\phi^s - \delta_{ij} \partial_k\phi^s \partial_k\phi^s}{8 \pi G}
 $$
-</div>
-</div>
+            </div>
+        </div>
+        
+        <p>
+            By processing halo mass profiles, localized velocity configurations, and gravitational potentials derived from individual clusters, we track how aggregate non-linear properties scale up into these fundamental tensor frameworks.
+        </p>
 
-</section>
+        <div class="plot-container">
+            <div class="plot-placeholder">
+                <span>[ Placeholder: Insert Power Spectrum or Stress Tensor Correlation Plot Here ]</span>
+            </div>
+            <span class="plot-caption">Figure 1: Cross-correlation metrics measuring spatial predictions of EFT stress tensors against halo proxy mass fields across varying redshifts.</span>
+        </div>
+    </section>
+
+    <section id="results">
+        <h2>Current Progress & Preliminary Results</h2>
+        <ul>
+            <li><strong>Pipeline Implementation:</strong> Constructed data parsing tools to filter large snapshot files generated from N-body boxes.</li>
+            <li><strong>Feature Extraction:</strong> Calculated localized stress tensors for thousands of halo instances across specific mass bins.</li>
+            <li><strong>Next Horizons:</strong> Currently implementing testing sequences to evaluate if incorporating velocity dispersion fields bounds prediction errors more closely compared to mass-only assignments.</li>
+        </ul>
+    </section>
 
 </div>
 
 <footer>
-© 2026 Om Kishor Hebbar. Built with GitHub Pages.
+    © 2026 Om Kishor Hebbar. Built with GitHub Pages.
 </footer>
 
 </body>
