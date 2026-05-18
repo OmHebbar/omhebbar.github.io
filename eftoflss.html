@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EFTofLSS Project | Om Kishor Hebbar</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/solid.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/search.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/physics.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/chtml.js"></script>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/solid.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/chtml.js" defer></script>
+
     <style>
         :root {
             --primary: #0b132b; /* Deep Space Navy */
@@ -97,17 +109,17 @@
             color: #e2e8f0;
         }
 
-        /* Centered display container for equations */
+        /* Centered layout container for equations */
         .equation-wrapper {
             display: flex;
             justify-content: center;
             margin: 20px 0;
         }
 
-        /* Ultra-tight container closely fitted around equations */
+        /* Ultra-tight container closely fitted around MathJax elements */
         .math-box {
             background-color: #111827;
-            padding: 16px 28px;
+            padding: 12px 24px;
             border-radius: 6px;
             border: 1px solid #374151;
             display: inline-block;
@@ -213,7 +225,7 @@
             </div>
 
             <p>
-                Here, \( p_b \) represents background pressure, \( c_s^2 \) denotes the speed of sound of the fluctuations, while \( c_{bv} \) and \( c_{sv} \) correspond to the bulk and shear viscosity parameters respectively. 
+                Here, $p_b$ represents background pressure, $c_s^2$ denotes the speed of sound of the fluctuations, while $c_{bv}$ and $c_{sv}$ correspond to the bulk and shear viscosity parameters respectively. 
             </p>
             <p>
                 The goal of this research project is to map out the explicit physical origins of these counter-terms. Instead of treating counter-terms purely as nuisance parameters to be fitted to observational data, we look directly inside large-scale N-body simulations to calculate them deterministically from the aggregate properties of individual dark matter halos.
@@ -228,7 +240,7 @@
             
             <div class="equation-wrapper">
                 <div class="math-box">
-                    \[ \tau_{ij} = \rho_m v_i^s v_j^s + \frac{2 \partial_i\phi^s \partial_j\phi^s - \delta_{ij} \partial_k\phi^s \partial_k\phi^s}{8 \pi G} \]
+                    $$ \tau_{ij} = \rho_m v_i^s v_j^s + \frac{2 \partial_i\phi^s \partial_j\phi^s - \delta_{ij} \partial_k\phi^s \partial_k\phi^s}{8 \pi G} $$
                 </div>
             </div>
             
