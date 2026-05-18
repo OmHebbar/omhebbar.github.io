@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EFTofLSS Project | Om Kishor Hebbar</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/solid.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/search.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/physics.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/chtml.js"></script>
     <style>
         :root {
             --primary: #0b132b; /* Deep Space Navy */
@@ -99,43 +104,15 @@
             margin: 20px 0;
         }
 
-        /* Ultra-tight structured box closely fitted around equations */
+        /* Ultra-tight container closely fitted around equations */
         .math-box {
             background-color: #111827;
-            padding: 12px 24px;
+            padding: 16px 28px;
             border-radius: 6px;
             border: 1px solid #374151;
-            font-size: 1.15rem;
-            color: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+            display: inline-block;
             overflow-x: auto;
             max-width: 100%;
-        }
-
-        .math-box sub, .math-box sup {
-            font-size: 0.8rem;
-        }
-
-        /* Fraction structure for cleaner inline HTML presentation */
-        .fraction {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 0.2em;
-            text-align: center;
-            font-size: 1.05rem;
-        }
-        .fraction > span {
-            display: block;
-            padding: 0 0.2em;
-        }
-        .fraction span.numerator {
-            border-bottom: 1px solid #ffffff;
-            padding-bottom: 2px;
-        }
-        .fraction span.denominator {
-            padding-top: 2px;
         }
 
         /* Simulation plot box */
@@ -217,12 +194,26 @@
 
             <div class="equation-wrapper">
                 <div class="math-box">
-                    &lang;&Delta;[&tau;<sup>ij</sup>]<sub>&Lambda;</sub>&rang;<sub>&delta;<sub>l</sub></sub> = p<sub>b</sub>&delta;<sup>ij</sup> + &rho;<sub>b</sub> &Big;[ c<sub>s</sub><sup>2</sup>&delta;<sub>l</sub>&delta;<sup>ij</sup> &minus; <div class="fraction"><span class="numerator">c<sub>bv</sub><sup>2</sup></span><span class="denominator">Ha</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup> &minus; <div class="fraction"><span class="numerator">3</span><span class="denominator">4</span></div><div class="fraction"><span class="numerator">c<sub>sv</sub><sup>2</sup></span><span class="denominator">Ha</span></div> (&part;<sup>j</sup>v<sub>l</sub><sup>i</sup> + &part;<sup>i</sup>v<sub>l</sub><sup>j</sup> &minus; <div class="fraction"><span class="numerator">2</span><span class="denominator">3</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup>) &Big;] + &Delta;&tau;<sup>ij</sup> + &hellip;
+                    \begin{align}
+                    \left\langle \left[ \tau^{ij} \right]_{\Lambda} \right\rangle_{\delta_l}
+                    &= p_b \, \delta^{ij} 
+                    + \rho_b \Bigg[
+                    c_s^2 \, \delta_l \, \delta^{ij}
+                    - \frac{c_{bv}^2}{Ha} \, \delta^{ij} \, \partial_k v_l^k \\
+                    &\quad
+                    - \frac{3}{4} \frac{c_{sv}^2}{Ha}
+                    \left(
+                    \partial^j v_l^i + \partial^i v_l^j
+                    - \frac{2}{3} \delta^{ij} \, \partial_k v_l^k
+                    \right)
+                    \Bigg]
+                    + \Delta \tau^{ij} + \cdots
+                    \end{align}
                 </div>
             </div>
 
             <p>
-                Here, p<sub>b</sub> represents background pressure, c<sub>s</sub><sup>2</sup> denotes the speed of sound of the fluctuations, while c<sub>bv</sub> and c<sub>sv</sub> correspond to the bulk and shear viscosity parameters respectively. 
+                Here, \( p_b \) represents background pressure, \( c_s^2 \) denotes the speed of sound of the fluctuations, while \( c_{bv} \) and \( c_{sv} \) correspond to the bulk and shear viscosity parameters respectively. 
             </p>
             <p>
                 The goal of this research project is to map out the explicit physical origins of these counter-terms. Instead of treating counter-terms purely as nuisance parameters to be fitted to observational data, we look directly inside large-scale N-body simulations to calculate them deterministically from the aggregate properties of individual dark matter halos.
@@ -237,11 +228,7 @@
             
             <div class="equation-wrapper">
                 <div class="math-box">
-                    &tau;<sub>ij</sub> = &rho;<sub>m</sub> v<sub>i</sub><sup>s</sup> v<sub>j</sub><sup>s</sup> + 
-                    <div class="fraction">
-                        <span class="numerator">2 &part;<sub>i</sub>&phi;<sup>s</sup> &part;<sub>j</sub>&phi;<sup>s</sup> &minus; &delta;<sub>ij</sub> &part;<sub>k</sub>&phi;<sup>s</sup> &part;<sub>k</sub>&phi;<sup>s</sup></span>
-                        <span class="denominator">8 &pi; G</span>
-                    </div>
+                    \[ \tau_{ij} = \rho_m v_i^s v_j^s + \frac{2 \partial_i\phi^s \partial_j\phi^s - \delta_{ij} \partial_k\phi^s \partial_k\phi^s}{8 \pi G} \]
                 </div>
             </div>
             
