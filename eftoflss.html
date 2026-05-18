@@ -92,42 +92,39 @@
             color: #e2e8f0;
         }
 
-        /* Standardized LaTeX math font environment */
-        .math-text {
-            font-family: "Latin Modern Math", "Computer Modern", "Times New Roman", serif;
-            font-style: italic;
-        }
-
-        /* Clean, boundary-free equation display block */
-        .equation-block {
-            background: #111827;
-            padding: 24px;
-            border-radius: 6px;
-            text-align: center;
-            font-family: "Latin Modern Math", "Computer Modern", "Times New Roman", serif;
-            font-size: 1.35rem; /* Increased size for enhanced readability */
-            margin: 25px 0;
-            color: #ffffff;
-            overflow-x: auto;
+        /* Centered display container for equations */
+        .equation-wrapper {
             display: flex;
-            align-items: center;
             justify-content: center;
+            margin: 20px 0;
+        }
+
+        /* Ultra-tight structured box closely fitted around equations */
+        .math-box {
+            background-color: #111827;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid #374151;
+            font-size: 1.15rem;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
             gap: 4px;
+            overflow-x: auto;
+            max-width: 100%;
         }
 
-        .equation-block sub, .equation-block sup, 
-        .math-text sub, .math-text sup {
-            font-size: 0.9rem;
-            font-style: italic;
+        .math-box sub, .math-box sup {
+            font-size: 0.8rem;
         }
 
-        /* Fraction structure for HTML math representation */
+        /* Fraction structure for cleaner inline HTML presentation */
         .fraction {
             display: inline-block;
             vertical-align: middle;
             margin: 0 0.2em;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.05rem;
         }
         .fraction > span {
             display: block;
@@ -206,59 +203,66 @@
         <section id="overview">
             <h2>Project Overview & Motivation</h2>
             <p>
-                The Effective Field Theory (EFT) approach for studying LSS has been successful in modeling the large-scale universe as an effective fluid while including the effects from non-linear scales[cite: 466, 514]. It has been proposed to formulate a well-defined and controlled alternative to conventional cosmological perturbation theory[cite: 469].
+                The Effective Field Theory (EFT) approach for studying LSS has been successful in modeling the large-scale universe as an effective fluid while including the effects from non-linear scales. It has been proposed to formulate a well-defined and controlled alternative to conventional cosmological perturbation theory.
             </p>
             <p>
-                The EFT of LSS approach begins by coarse-graining the standard cosmological fluid equations, which introduces an effective stress tensor sourced by short-scale dynamics[cite: 522, 524]. The back-reaction on the long-wavelength fields due to non-linear motions is precisely what generates the effective stress tensor[cite: 491, 524].
+                The EFT of LSS approach begins by coarse-graining the standard cosmological fluid equations, which introduces an effective stress tensor sourced by short-scale dynamics. The back-reaction on the long-wavelength fields due to non-linear motions is precisely what generates the effective stress tensor.
             </p>
             <p>
-                This effective stress tensor can be written both as an expansion in terms of long-wavelength fields, as well as in terms of short-wavelength fields[cite: 525]. Terms in the long-wavelength expansion are written purely based on the symmetries of the theory, with undetermined coefficients known as the counter-terms[cite: 518, 666, 671]. In general, these counter-terms are measured through cosmological N-body simulations[cite: 519, 530].
+                This effective stress tensor can be written both as an expansion in terms of long-wavelength fields, as well as in terms of short-wavelength fields. Terms in the long-wavelength expansion are written purely based on the symmetries of the theory, with undetermined coefficients known as the counter-terms. In general, these counter-terms are measured through cosmological N-body simulations.
             </p>
             <p>
-                The goal of this research project is to map out the explicit physical origins of these counter-terms[cite: 530]. Instead of treating counter-terms purely as nuisance parameters to be fitted to observational data, we look directly inside large-scale N-body simulations to calculate them deterministically from the aggregate properties of individual dark matter halos[cite: 530, 561].
+                When taking expectation values over these short-wavelength modes in the presence of long-wavelength perturbations, the symmetries of the system constrain the corresponding long-wavelength expansion. The effective stress tensor takes the form of an imperfect fluid:
+            </p>
+
+            <div class="equation-wrapper">
+                <div class="math-box">
+                    &lang;&Delta;[&tau;<sup>ij</sup>]<sub>&Lambda;</sub>&rang;<sub>&delta;<sub>l</sub></sub> = p<sub>b</sub>&delta;<sup>ij</sup> + &rho;<sub>b</sub> &Big;[ c<sub>s</sub><sup>2</sup>&delta;<sub>l</sub>&delta;<sup>ij</sup> &minus; <div class="fraction"><span class="numerator">c<sub>bv</sub><sup>2</sup></span><span class="denominator">Ha</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup> &minus; <div class="fraction"><span class="numerator">3</span><span class="denominator">4</span></div><div class="fraction"><span class="numerator">c<sub>sv</sub><sup>2</sup></span><span class="denominator">Ha</span></div> (&part;<sup>j</sup>v<sub>l</sub><sup>i</sup> + &part;<sup>i</sup>v<sub>l</sub><sup>j</sup> &minus; <div class="fraction"><span class="numerator">2</span><span class="denominator">3</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup>) &Big;] + &Delta;&tau;<sup>ij</sup> + &hellip;
+                </div>
+            </div>
+
+            <p>
+                Here, p<sub>b</sub> represents background pressure, c<sub>s</sub><sup>2</sup> denotes the speed of sound of the fluctuations, while c<sub>bv</sub> and c<sub>sv</sub> correspond to the bulk and shear viscosity parameters respectively. 
+            </p>
+            <p>
+                The goal of this research project is to map out the explicit physical origins of these counter-terms. Instead of treating counter-terms purely as nuisance parameters to be fitted to observational data, we look directly inside large-scale N-body simulations to calculate them deterministically from the aggregate properties of individual dark matter halos.
             </p>
         </section>
 
         <section id="methodology">
             <h2>Methodology & Theoretical Framework</h2>
             <p>
-                To trace the precise footprint of short-scale contributions, we decouple the kinematics inside our <span class="math-text">GADGET-4</span> simulation setups[cite: 560]. The short-wavelength component of the effective stress tensor can be quantified directly via localized, sub-resolution fields[cite: 524, 653]:
+                To trace the precise footprint of short-scale contributions, we decouple the kinematics inside our GADGET-4 simulation setups. The short-wavelength component of the effective stress tensor is quantified directly using localized sub-resolution properties:
             </p>
             
-            <div class="equation-block">
-                &tau;<sub>ij</sub> = &rho;<sub>m</sub> v<sub>i</sub><sup>s</sup> v<sub>j</sub><sup>s</sup> + 
-                <div class="fraction">
-                    <span class="numerator">2 &part;<sub>i</sub>&phi;<sup>s</sup> &part;<sub>j</sub>&phi;<sup>s</sup> &minus; &delta;<sub>ij</sub> &part;<sub>k</sub>&phi;<sup>s</sup> &part;<sub>k</sub>&phi;<sup>s</sup></span>
-                    <span class="denominator">8 &pi; G</span>
+            <div class="equation-wrapper">
+                <div class="math-box">
+                    &tau;<sub>ij</sub> = &rho;<sub>m</sub> v<sub>i</sub><sup>s</sup> v<sub>j</sub><sup>s</sup> + 
+                    <div class="fraction">
+                        <span class="numerator">2 &part;<sub>i</sub>&phi;<sup>s</sup> &part;<sub>j</sub>&phi;<sup>s</sup> &minus; &delta;<sub>ij</sub> &part;<sub>k</sub>&phi;<sup>s</sup> &part;<sub>k</sub>&phi;<sup>s</sup></span>
+                        <span class="denominator">8 &pi; G</span>
+                    </div>
                 </div>
             </div>
             
             <p>
-                When taking expectation values over these short-wavelength modes in the presence of long-wavelength perturbations, the symmetries of the system constrain the corresponding long-wavelength expansion[cite: 663, 671]. Following Carrasco et al. (Equation 25), the effective stress tensor takes the form of an imperfect fluid[cite: 672, 674]:
-            </p>
-
-            <div class="equation-block">
-                &lang;&Delta;[&tau;<sup>ij</sup>]<sub>&Lambda;</sub>&rang;<sub>&delta;<sub>l</sub></sub> = p<sub>b</sub>&delta;<sup>ij</sup> + &rho;<sub>b</sub> &Big;[ c<sub>s</sub><sup>2</sup>&delta;<sub>l</sub>&delta;<sup>ij</sup> &minus; <div class="fraction"><span class="numerator">c<sub>bv</sub><sup>2</sup></span><span class="denominator">Ha</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup> &minus; <div class="fraction"><span class="numerator">3</span><span class="denominator">4</span></div><div class="fraction"><span class="numerator">c<sub>sv</sub><sup>2</sup></span><span class="denominator">Ha</span></div> (&part;<sup>j</sup>v<sub>l</sub><sup>i</sup> + &part;<sup>i</sup>v<sub>l</sub><sup>j</sup> &minus; <div class="fraction"><span class="numerator">2</span><span class="denominator">3</span></div>&delta;<sup>ij</sup>&part;<sub>k</sub>v<sub>l</sub><sup>k</sup>) &Big;] + &Delta;&tau;<sup>ij</sup> + &hellip;
-            </div>
-
-            <p>
-                Here, <span class="math-text">p<sub>b</sub></span> represents background pressure, <span class="math-text">c<sub>s</sub><sup>2</sup></span> denotes the speed of sound of the fluctuations, while <span class="math-text">c<sub>bv</sub></span> and <span class="math-text">c<sub>sv</sub></span> correspond to the bulk and shear viscosity parameters respectively[cite: 674, 675]. By correlating halo properties such as localized mass and velocity profiles within N-body codes, we isolate how specific structures determine these coefficients deterministically[cite: 530, 563].
+                By processing halo mass profiles, localized velocity configurations, and gravitational potentials derived from individual clusters, we track how aggregate non-linear properties scale up into these fundamental tensor frameworks.
             </p>
 
             <div class="plot-container">
                 <div class="plot-placeholder">
                     <span>[ Placeholder: Insert Power Spectrum or Stress Tensor Correlation Plot Here ]</span>
                 </div>
-                <span class="plot-caption">Figure 1: Cross-correlation metrics measuring spatial predictions of EFT stress tensors against halo proxy mass fields across varying redshifts[cite: 275].</span>
+                <span class="plot-caption">Figure 1: Cross-correlation metrics measuring spatial predictions of EFT stress tensors against halo proxy mass fields across varying redshifts.</span>
             </div>
         </section>
 
         <section id="results">
             <h2>Current Progress & Preliminary Results</h2>
             <ul>
-                <li><strong>Pipeline Implementation:</strong> Constructed data parsing tools to filter large snapshot files generated from N-body boxes[cite: 283, 285].</li>
-                <li><strong>Feature Extraction:</strong> Calculated localized stress tensors for thousands of halo instances across specific mass bins[cite: 284, 295].</li>
-                <li><strong>Next Horizons:</strong> Currently implementing testing sequences to evaluate if incorporating velocity dispersion fields bounds prediction errors more closely compared to mass-only assignments[cite: 295, 299].</li>
+                <li><strong>Pipeline Implementation:</strong> Constructed data parsing tools to filter large snapshot files generated from N-body boxes.</li>
+                <li><strong>Feature Extraction:</strong> Calculated localized stress tensors for thousands of halo instances across specific mass bins.</li>
+                <li><strong>Next Horizons:</strong> Currently implementing testing sequences to evaluate if incorporating velocity dispersion fields bounds prediction errors more closely compared to mass-only assignments.</li>
             </ul>
         </section>
 
