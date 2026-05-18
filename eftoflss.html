@@ -102,23 +102,23 @@
             font-size: 1.5rem;
         }
 
-        /* Clean styling rules for links inside headers */
-        h2 a {
-            color: inherit;
-            text-decoration: underline;
-            text-decoration-color: rgba(0, 180, 216, 0.4);
-            transition: text-decoration-color 0.2s ease;
-        }
-
-        h2 a:hover {
-            text-decoration-color: var(--secondary);
-        }
-
         p {
             margin-top: 0;
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
             color: #e2e8f0;
+        }
+
+        /* Clean styling rules for standard text links */
+        p a {
+            color: var(--secondary);
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 180, 216, 0.4);
+            transition: text-decoration-color 0.2s ease;
+        }
+
+        p a:hover {
+            text-decoration-color: var(--secondary);
         }
 
         .equation-wrapper {
@@ -251,9 +251,9 @@ $$
     </section>
 
     <section id="methodology">
-        <h2>A Toy Model : <a href="https://en.wikipedia.org/wiki/Plummer_model" target="_blank" rel="noopener noreferrer">Plummer Spheres</a>!</h2>
+        <h2>A Toy Model : Plummer Spheres!</h2>
         <p>
-            For a start, we begin with the calculation of the effective stress tensor for various scenarios involving Plummer spheres!
+            For a start, we begin with the calculation of the effective stress tensor for various scenarios involving <a href="https://en.wikipedia.org/wiki/Plummer_model" target="_blank" rel="noopener noreferrer">Plummer spheres</a>!
         </p>
 
         <div class="plot-container">
