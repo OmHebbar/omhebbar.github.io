@@ -128,12 +128,13 @@
 
         .math-box {
             background-color: #111827;
-            padding: 12px 24px;
+            padding: 6px 18px; /* Slightly tightened padding to favor horizontal line span */
             border-radius: 6px;
             border: 1px solid #374151;
             display: inline-block;
-            overflow-x: auto;
+            overflow-x: auto; /* Adds clean scrollbar if container width gets tightly compressed */
             max-width: 100%;
+            white-space: nowrap; /* Ensures the equation behaves strictly as a single line */
         }
 
         /* Modern Media Layout Wrapper */
@@ -146,7 +147,7 @@
             margin: 25px 0;
         }
 
-        /* HTML5 Video Formatting rules - Expanded to 880px to maximize footprint */
+        /* HTML5 Video Formatting rules */
         .plot-container video {
             width: 100%;
             max-width: 880px;
@@ -214,20 +215,7 @@
         <div class="equation-wrapper">
             <div class="math-box">
 $$
-\begin{aligned}
-\left\langle [\tau^{ij}]_{\Lambda} \right\rangle_{\delta_l}
-&= p_b \delta^{ij} 
-+ \rho_b \Bigg[
-c_s^2 \delta_l \delta^{ij}
-- \frac{c_{bv}^2}{Ha} \delta^{ij} \partial_k v_l^k \\
-&\quad - \frac{3}{4} \frac{c_{sv}^2}{Ha}
-\left(
-\partial^j v_l^i + \partial^i v_l^j
-- \frac{2}{3} \delta^{ij} \partial_k v_l^k
-\right)
-\Bigg]
-+ \Delta \tau^{ij} + \dots
-\end{aligned}
+\left\langle [\tau^{ij}]_{\Lambda} \right\rangle_{\delta_l} = p_b \delta^{ij} + \rho_b \Bigg[ c_s^2 \delta_l \delta^{ij} - \frac{c_{bv}^2}{Ha} \delta^{ij} \partial_k v_l^k - \frac{3}{4} \frac{c_{sv}^2}{Ha} \left( \partial^j v_l^i + \partial^i v_l^j - \frac{2}{3} \delta^{ij} \partial_k v_l^k \right) \Bigg] + \Delta \tau^{ij} + \dots
 $$
             </div>
         </div>
