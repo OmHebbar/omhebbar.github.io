@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Kishor Hebbar | Academic Portfolio</title>
+    <style>
+        :root {
+            --primary: #1a365d; /* Deep academic blue */
+            --secondary: #2b6cb0;
+            --text: #2d3748;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1rem;
+            color: #cbd5e0;
+        }
+
+        nav {
+            background-color: #2d3748;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            scroll-margin-top: 60px; /* Prevents nav bar from covering headings */
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .project {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .project-meta {
+            font-style: italic;
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 4px;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Om Kishor Hebbar</h1>
+        <p>BS-MS Dual Degree Student at IISER Pune | Cosmologist in the Making</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research Interests</a>
+        <a href="#achievements">Achievements</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome! I am a BS-MS Dual Degree student at the Indian Institute of Science Education and Research (IISER), Pune. My research interests broadly lie in cosmology, large-scale structures, and computational physics.</p>
+            <p class="contact-info">
+                <strong>Email:</strong> <a href="mailto:om.kishorhebbar@students.iiserpune.ac.in">om.kishorhebbar@students.iiserpune.ac.in</a><br>
+                <strong>Location:</strong> Dr Homi Bhabha Rd, Pashan, Pune, India
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Educational Background</h2>
+            <div class="project">
+                <div class="project-title">BS-MS Dual Degree</div>
+                <div class="project-meta">IISER Pune (2022 - 2027, Expected)</div>
+                <p>Current CGPA: <strong>9.0/10</strong></p>
+            </div>
+            <div class="project">
+                <div class="project-title">Pre-University College</div>
+                <div class="project-meta">City College, Bengaluru (2020 - 2022)</div>
+                <p>Specialized in Physics, Chemistry, Mathematics, and Computer Science.</p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Experience & Interests</h2>
+            
+            <div class="project">
+                <div class="project-title">Predicting EFTofLSS Counter-terms from Halo Properties</div>
+                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2025 - Present)</div>
+                <p>Developing a framework to investigate the physical origins of counter-terms in the Effective Field Theory of Large Scale Structure. By computing the effective stress tensor for individual dark matter halos within large-scale N-body simulations, we aim to bridge the gap between non-linear short-scale dynamics and long-wavelength cosmological fields.</p>
+            </div>
+
+            <div class="project">
+                <div class="project-title">Modeling the HI Distribution in the Post-Reionization Universe</div>
+                <div class="project-meta">Summer Project with Prof. Jasjeet Singh Bagla, IISER Mohali (May 2025 - July 2025)</div>
+                <p>Developed a statistical framework to predict the spatial distribution of neutral hydrogen using Illustris TNG simulations. Implemented dual-stage Principal Component Analysis (PCA) and linear regression to create a physically-motivated estimator using halo mass, spin, and velocity dispersion.</p>
+            </div>
+
+            <div class="project">
+                <div class="project-title">Baryonic Effects on the Matter Distribution in Cosmology</div>
+                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2024 - April 2025)</div>
+                <p>Investigated the impact of baryonic feedback on large-scale matter distribution by comparing theoretical models with cosmological simulations utilizing the Spherical Collapse model.</p>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements & Skills</h2>
+            <h3>Key Recognitions</h3>
+            <ul>
+                <li><strong>CSIR NET Junior Research Fellowship (JRF) 2026:</strong> Secured All India Rank 66 in Physical Sciences.</li>
+                <li><strong>National Topper 2023:</strong> National Graduate Physics Examination (NGPE) organized by IAPT.</li>
+                <li><strong>KVPY Scholar 2021:</strong> Awarded by the Dept. of Science and Technology, Govt. of India.</li>
+            </ul>
+
+            <h3>Technical Skills</h3>
+            <p>
+                <strong>Languages:</strong> 
+                <span class="badge">Python</span> <span class="badge">C++</span> <span class="badge">LaTeX</span>
+            </p>
+            <p>
+                <strong>Tools & Simulation Packages:</strong> 
+                <span class="badge">CLASS</span> <span class="badge">GADGET-4</span> <span class="badge">NumPy</span> <span class="badge">SciPy</span> <span class="badge">Pandas</span>
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Om Kishor Hebbar. Built with GitHub Pages.
+    </footer>
+
+</body>
+</html>
