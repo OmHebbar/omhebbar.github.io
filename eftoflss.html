@@ -109,7 +109,6 @@
             color: #e2e8f0;
         }
 
-        /* Clean styling rules for standard text links */
         p a {
             color: var(--secondary);
             text-decoration: underline;
@@ -137,6 +136,7 @@
             max-width: 100%;
         }
 
+        /* Modern Media Layout Wrapper */
         .plot-container {
             background: #111827;
             border: 1px solid #374151;
@@ -146,26 +146,24 @@
             margin: 25px 0;
         }
 
-        .plot-placeholder {
+        /* HTML5 Responsive Video Formatting rules */
+        .plot-container video {
             width: 100%;
-            max-width: 600px;
-            height: 350px;
-            background: #1f2937;
-            border: 2px dashed #475569;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
+            max-width: 700px;
+            height: auto;
             border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #374151;
+            outline: none;
         }
 
         .plot-caption {
             display: block;
-            margin-top: 12px;
-            font-size: 0.9rem;
+            margin-top: 14px;
+            font-size: 0.95rem;
             color: var(--text-muted);
             font-style: italic;
+            line-height: 1.4;
         }
 
         ul {
@@ -257,9 +255,11 @@ $$
         </p>
 
         <div class="plot-container">
-            <div class="plot-placeholder">
-                <span>[ Placeholder: Insert Power Spectrum or Stress Tensor Correlation Plot Here ]</span>
-            </div>
+            <video controls loop muted autoplay playsinline>
+                <source src="T_xy_offaxis.mov" type="video/quicktime">
+                <source src="T_xy_offaxis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <span class="plot-caption">Figure 1: Cross-correlation metrics measuring spatial predictions of EFT stress tensors against halo proxy mass fields across varying redshifts.</span>
         </div>
     </section>
