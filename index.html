@@ -26,7 +26,28 @@
             background-color: var(--primary);
             color: white;
             padding: 40px 20px;
-            text-align: center;
+        }
+
+        /* Flexbox alignment for profile picture and text */
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px; /* Slight round corners */
+            border: 3px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-text {
+            flex: 1;
         }
 
         header h1 {
@@ -72,7 +93,7 @@
             margin-bottom: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            scroll-margin-top: 60px; /* Prevents nav bar from covering headings */
+            scroll-margin-top: 60px;
         }
 
         h2 {
@@ -121,13 +142,26 @@
             color: #718096;
             font-size: 0.9rem;
         }
+
+        /* Responsive twist for smaller phone screens */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Om Kishor Hebbar</h1>
-        <p>BS-MS Dual Degree Student at IISER Pune | Cosmologist in the Making</p>
+        <div class="header-container">
+            <img src="profile.jpg" alt="Om Kishor Hebbar" class="profile-pic">
+            <div class="header-text">
+                <h1>Om Kishor Hebbar</h1>
+                <p>BS-MS Dual Degree Student at IISER Pune | Cosmologist in the Making</p>
+            </div>
+        </div>
     </header>
 
     <nav>
@@ -141,66 +175,66 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Welcome! I am a BS-MS Dual Degree student at the Indian Institute of Science Education and Research (IISER), Pune. My research interests broadly lie in cosmology, large-scale structures, and computational physics.</p>
+            <p>Welcome! I am a BS-MS Dual Degree student at the Indian Institute of Science Education and Research (IISER), Pune[cite: 3, 13]. My research interests broadly lie in cosmology, large-scale structures, and computational physics.</p>
             <p class="contact-info">
-                <strong>Email:</strong> <a href="mailto:om.kishorhebbar@students.iiserpune.ac.in">om.kishorhebbar@students.iiserpune.ac.in</a><br>
-                <strong>Location:</strong> Dr Homi Bhabha Rd, Pashan, Pune, India
+                <strong>Email:</strong> <a href="mailto:om.kishorhebbar@students.iiserpune.ac.in">om.kishorhebbar@students.iiserpune.ac.in</a> [cite: 5]<br>
+                <strong>Location:</strong> Dr Homi Bhabha Rd, Pashan, Pune, India [cite: 4]
             </p>
         </section>
 
         <section id="education">
-            <h2>Educational Background</h2>
+            <h2>Educational Background</h2> [cite: 12]
             <div class="project">
                 <div class="project-title">BS-MS Dual Degree</div>
-                <div class="project-meta">IISER Pune (2022 - 2027, Expected)</div>
-                <p>Current CGPA: <strong>9.0/10</strong></p>
+                <div class="project-meta">IISER Pune (2022 - 2027, Expected)</div> [cite: 6, 7, 13]
+                <p>Current CGPA: <strong>9.0/10</strong></p> [cite: 13]
             </div>
             <div class="project">
                 <div class="project-title">Pre-University College</div>
-                <div class="project-meta">City College, Bengaluru (2020 - 2022)</div>
-                <p>Specialized in Physics, Chemistry, Mathematics, and Computer Science.</p>
+                <div class="project-meta">City College, Bengaluru (2020 - 2022)</div> [cite: 14]
+                <p>Specialized in Physics, Chemistry, Mathematics, and Computer Science.</p> [cite: 15]
             </div>
         </section>
 
         <section id="research">
-            <h2>Research Experience & Interests</h2>
+            <h2>Research Experience & Interests</h2> [cite: 18]
             
             <div class="project">
-                <div class="project-title">Predicting EFTofLSS Counter-terms from Halo Properties</div>
-                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2025 - Present)</div>
-                <p>Developing a framework to investigate the physical origins of counter-terms in the Effective Field Theory of Large Scale Structure. By computing the effective stress tensor for individual dark matter halos within large-scale N-body simulations, we aim to bridge the gap between non-linear short-scale dynamics and long-wavelength cosmological fields.</p>
+                <div class="project-title">Predicting EFTofLSS Counter-terms from Halo Properties</div> [cite: 19]
+                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2025 - Present)</div> [cite: 11, 19]
+                <p>Developing a framework to investigate the physical origins of counter-terms in the Effective Field Theory of Large Scale Structure[cite: 20]. By computing the effective stress tensor for individual dark matter halos within large-scale N-body simulations, we aim to bridge the gap between non-linear short-scale dynamics and long-wavelength cosmological fields[cite: 21]. We focus on correlating halo properties in N-body simulations to the stress tensor, for a physically-motivated estimation of counter-terms[cite: 22].</p>
             </div>
 
             <div class="project">
-                <div class="project-title">Modeling the HI Distribution in the Post-Reionization Universe</div>
-                <div class="project-meta">Summer Project with Prof. Jasjeet Singh Bagla, IISER Mohali (May 2025 - July 2025)</div>
-                <p>Developed a statistical framework to predict the spatial distribution of neutral hydrogen using Illustris TNG simulations. Implemented dual-stage Principal Component Analysis (PCA) and linear regression to create a physically-motivated estimator using halo mass, spin, and velocity dispersion.</p>
+                <div class="project-title">Modeling the HI Distribution in the Post-Reionization Universe</div> [cite: 24]
+                <div class="project-meta">Summer Project with Prof. Jasjeet Singh Bagla, IISER Mohali (May 2025 - July 2025)</div> [cite: 23, 25]
+                <p>Developed a statistical framework to predict the spatial distribution of neutral hydrogen using Illustris TNG simulations[cite: 26]. Implemented dual-stage Principal Component Analysis (PCA) and linear regression to create a physically-motivated estimator using halo mass, spin, and velocity dispersion[cite: 27]. The model improved accuracy over traditional mass-assignment methods across multiple redshifts and effectively incorporated both central and satellite populations[cite: 28].</p>
             </div>
 
             <div class="project">
-                <div class="project-title">Baryonic Effects on the Matter Distribution in Cosmology</div>
-                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2024 - April 2025)</div>
-                <p>Investigated the impact of baryonic feedback on large-scale matter distribution by comparing theoretical models with cosmological simulations utilizing the Spherical Collapse model.</p>
+                <div class="project-title">Baryonic Effects on the Matter Distribution in Cosmology</div> [cite: 31]
+                <div class="project-meta">Semester Project with Dr. Arka Banerjee, IISER Pune (Aug 2024 - April 2025)</div> [cite: 29, 30, 32]
+                <p>Investigated the impact of baryonic feedback on large-scale matter distribution by comparing theoretical models with cosmological simulations[cite: 33]. We utilised the Spherical Collapse model to characterize dark matter PDFs under non-linear gravitational evolution[cite: 34]. The aim was to find quantities related to the matter distribution PDFs that remain conserved through gravitational evolution, providing a technique to decouple baryonic signatures from gravitational dynamics[cite: 35].</p>
             </div>
         </section>
 
         <section id="achievements">
-            <h2>Achievements & Skills</h2>
+            <h2>Achievements & Skills</h2> [cite: 36, 43]
             <h3>Key Recognitions</h3>
             <ul>
-                <li><strong>CSIR NET Junior Research Fellowship (JRF) 2026:</strong> Secured All India Rank 66 in Physical Sciences.</li>
-                <li><strong>National Topper 2023:</strong> National Graduate Physics Examination (NGPE) organized by IAPT.</li>
-                <li><strong>KVPY Scholar 2021:</strong> Awarded by the Dept. of Science and Technology, Govt. of India.</li>
+                <li><strong>CSIR NET Junior Research Fellowship (JRF) 2026:</strong> Secured All India Rank 66 in Physical Sciences. [cite: 37]</li>
+                <li><strong>National Topper 2023:</strong> National Graduate Physics Examination (NGPE) organized by IAPT. [cite: 38]</li>
+                <li><strong>KVPY Scholar 2021:</strong> Awarded by the Department of Science and Technology, Govt. of India. [cite: 40]</li>
             </ul>
 
-            <h3>Technical Skills</h3>
+            <h3>Technical Skills</h3> [cite: 43]
             <p>
                 <strong>Languages:</strong> 
-                <span class="badge">Python</span> <span class="badge">C++</span> <span class="badge">LaTeX</span>
+                <span class="badge">Python</span> <span class="badge">C++</span> <span class="badge">LaTeX</span> [cite: 44]
             </p>
             <p>
                 <strong>Tools & Simulation Packages:</strong> 
-                <span class="badge">CLASS</span> <span class="badge">GADGET-4</span> <span class="badge">NumPy</span> <span class="badge">SciPy</span> <span class="badge">Pandas</span>
+                <span class="badge">CLASS</span> <span class="badge">GADGET-4</span> <span class="badge">NumPy</span> <span class="badge">SciPy</span> <span class="badge">Pandas</span> [cite: 44]
             </p>
         </section>
 
